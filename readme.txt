@@ -1,4 +1,4 @@
-V1.1 modify by jxy
+V1.1 modify by jxy & hj
 1.添加了注册，登录功能，且与数据库连接上了,与数据库连接详见config.py
 2.添加了有关数据库表的创建以及相关表的操作的代码注释
 3.添加了register.html以及register.js
@@ -17,4 +17,13 @@ V1.3 modify by jxy
 4.修改了V1.2的英语单词拼写错误以及部分表
 计划:
 1.用户登录后可以上传视频(video_url,以及pic_url)
+
+V1.4 modify by ktp & hj
+1.创建了相关视频表完成了视频浏览功能
+2.完成了视频收藏功能
+
+V2.0 modify by jxy & hj & ktp
+1.将代码好不容易的整合到了一起
+2.实现了个人中心界面以及与数据库的的连接
+3.测试了所有功能,修复了BUG,做了演示视频
 

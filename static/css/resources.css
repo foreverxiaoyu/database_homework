@@ -1,0 +1,515 @@
+main{
+    width: 100%;height:50rem;
+    position: relative;
+    border: solid rgb(13, 75, 106) 1px;box-shadow: 5px 0 5px black;
+    /*background-image: radial-gradient(rgba(90, 130, 157, 0.684),rgb(0, 19, 32))*/
+    background-image: url("../imgs/OrionPleiades-Imgur.jpg");
+}
+.head_bar{
+    position: absolute;
+    z-index: 1;
+    left:50%;top:2rem;
+    transform:translate(-50%, -50%);
+    width: 8rem;
+    height: 1.5rem;
+    padding-top: 0.25rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 1000;
+    font-family: monospace;
+}
+.head_bar::before {
+    content: ''; /* To generate the box */
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    border: solid rgb(13, 75, 106) 1px;
+    box-shadow: 0 0 5px rgb(8, 163, 230),0 -5px 5px black;
+    background:#234189;
+    transform: perspective(.5em) rotateX(-5deg);
+}
+
+.left_nav ul{
+    position: absolute;
+    left: 10rem;top: 3rem;
+    width: 25%;height:5rem;
+    display: flex;/* 该布局仅仅影响其直接子元素。 */
+    flex-direction: row;
+    justify-content: space-around;
+}
+.left_navs{
+    padding-top: 0.4rem;
+    width: 3rem; height:2.5rem;
+    border: solid rgb(142, 176, 192) 1px;box-shadow: 0 0 5px rgba(162, 209, 231, 0.618);
+    border-bottom-left-radius: 2rem;    border-bottom-right-radius: 2rem;
+    text-align: center;
+    color: rgb(239, 239, 239);
+    font-size: 10px;
+    font-weight: 600;
+    font-family: monospace;
+    background: rgba(0, 19, 32, 0.578);
+
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition:all 0.5s;
+
+}
+.left_navs_chosed{
+    padding-top: 0.4rem;
+    width: 3rem; height:3.5rem;
+    border: solid rgb(142, 176, 192) 1px;box-shadow: 0 -2px 10px rgba(162, 209, 231, 0.618);
+    color: rgb(0, 19, 32, 0.578);
+    text-align: center;
+    font-size: 10px;
+    font-weight: 1000;
+    font-family: monospace;
+    background:rgb(239, 239, 239);
+
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition:all 0.5s;
+}
+#login
+{
+    padding: 1rem;
+     position: absolute;
+    right: 10rem;top: 3rem;
+    width: 5rem;height:5rem;
+}
+.user_profile{
+    position: relative;
+    width: 8%;
+    height: 8%;
+    top:14%;
+    left: 82%;
+    background: snow;
+    text-align: center;
+    transition: opacity 1s;
+    z-index: 5;
+    opacity: 0;
+}
+.user_profile div{
+    margin: 1px;
+    color: black;
+        border: #66aee6 solid;
+    font-weight: bolder;
+    font-family: fangsong;
+}
+main div #id_p
+{
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    background-color: #ececec;
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image:none;
+
+}
+main div #id_n
+{
+    color: #ececec;
+     text-align: center;
+    font-size: 14px;
+    font-weight: 2000;
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+    display: inline-block;
+}
+
+.main_window{
+    position:relative;
+    left:50%;top:46%;
+    width: 80%;height: 80%;
+    transform:translate(-50%, -50%);
+    border: solid rgb(142, 176, 192) 1px;border-top: none; box-shadow: 0 4px 7px rgba(162, 209, 231, 0.618);
+    background: rgba(0, 19, 32, 0.578);
+}
+
+.container{
+    /*--box-size: 30%; !* 定义一个名为--box-size的变量，值为50% *!*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  height: 100%;
+  width:100%;
+}
+img{
+    border-radius: 5%;
+}
+/*资源详情*/
+/* 四个悬浮球的共同样式 */
+.floating-ball {
+    margin:30px 30px 10px;
+  position: relative;
+  color: #fff;
+  padding: 10px;
+  transition: all 0.3s ease;
+
+    border-radius: 50%;
+    background: radial-gradient(circle,  #224E79,#333333);
+    /*设置交叉轴的对齐方式为居中，同时可以使用将主轴方向设置为垂直方向，*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 悬浮球的鼠标悬停样式 */
+.floating-ball:hover {
+    box-shadow: 0 0 20px #66aee6;
+    background: radial-gradient(circle,  snow,#66aee6);
+    font-size: 18px;
+    font-weight: bolder;
+    color: #333333;
+}
+
+/* 悬浮球的标签样式 */
+.floating-ball span {
+    width: 100px;
+    height: 30px;
+    margin: 20px;
+  font-size: 14px;
+  display: block;
+  font-weight: bold;
+}
+
+/* 悬浮球的介绍文字样式 */
+.floating-ball p {
+    width: 100px;
+    height: 300px;
+  font-size: 12px;
+}
+
+
+
+/*video*/
+.left-box {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  width: 25%;  height: 100%;
+}
+.play_status{
+    float: left;
+    width: 1rem;height: 1rem;
+    border-radius: 50%;
+    background: green;
+}
+#main_video_span{
+    float: right;
+    width: 70%;height: 80%;
+    color: white;
+    text-align: right;
+    margin-top: 5%;
+    border-bottom: #fff000 solid;
+
+}
+.video_card_text-body{
+    float: right;
+    font-size: x-small;
+    font-weight: 300;
+    color: snow;
+    clear: both;
+    margin: 10% 2% 2%;
+}
+#video_left_autoplay{
+    width: 100%;height: auto;
+    margin: 3px;
+    border: solid rgb(142, 176, 192) 1px;border-top: none; box-shadow: 0 4px 7px rgba(162, 209, 231, 0.618);
+}
+#video_text{
+    width: 100%;height: 60%;
+    margin: 2px;padding: 5%;
+    font-family:fangsong;
+    font-size: medium;
+    font-weight: 300;
+    color: snow;
+    overflow-y: scroll;
+
+}
+.right-box {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+  width: 70%;height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+       -ms-overflow-style:none;  /* IE and Edge 隐藏 IE、Edge的滚动条*/
+}
+right-box::-webkit-scrollbar {
+  display: none;  /* 隐藏 Chrome、Safari 和 Opera 的滚动条 */
+     width: 0;
+  height: 0;
+}
+
+.video_card_texts{
+  width: 25%;height: 30%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 20px;
+}
+
+.video_cards {
+  display: flex;
+    flex-wrap: wrap;
+  width: 20%;
+  height: 23%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 3px rgba(0, 123, 255, 0.8);
+    margin: 20px;
+}
+
+.video_card-img-top-div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 2px;
+}
+.video_card_text {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(rgba(0, 123, 255, 0.8), transparent);
+  border-radius: 0 0 10px 10px;
+  transition: background-color 0.3s ease;
+}
+.video_card_text div{
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin: 2px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+.video_card_text a {
+    float: right;
+    width: 70%;
+    height: 100%;
+  display: block;
+  color: #fff;
+  font-size: xx-small;
+}
+
+.video_card_text:hover {
+  background: linear-gradient(rgba(0, 105, 217, 0.8), transparent);
+}
+
+/* "我的"界面*/
+
+/* Container */
+#index_mine {
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  padding: 10px;
+}
+#left-box-mine{
+    padding: 5%;
+    margin: 0 auto 0;
+}
+#left-box-mine div{
+    width: 50%;
+    height: 60%;
+    padding: 10%;
+    border: white solid 1px;
+    border-radius: 6%;
+    box-shadow: 0 0 1rem .5rem #E4FEFF;
+}
+
+.left-box img {
+  width: 50%;
+  height: 30%;
+  border-radius: 50%;
+  margin: 10% 25% 0;
+
+}
+.signature {
+      width:  50%;
+    height: 20%;
+    margin: 10% 25% 0;
+}
+.user-options{
+      width: 80%;height: 10%;
+    float: left;
+     display: flex;
+    flex-direction:row;/*row:行 column:列*/
+    justify-content: flex-start;
+}
+.user-options li{
+    width: 30%;height: 10%;
+    padding: 5%;
+    margin: 5%;
+    color: white;
+    font-family: 黑体, serif;
+    font-size: x-small;
+    font-weight: normal;
+    cursor: pointer;
+}
+.user-options li:hover{
+    color: #66aee6;
+}
+.user-options li:first-child{
+    float: left;
+}
+.user-options li:last-child{
+    float: right;
+}
+#right-box-mine{
+    display: unset;
+    padding: 10px;
+    margin-right: 3%;
+  width: 60%;height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#right-box-mine::-webkit-scrollbar {
+  display: none;  /* 隐藏 Chrome、Safari 和 Opera 的滚动条 */
+     width: 0;
+  height: 0;
+}
+#right-box-mine h2 {
+  margin-bottom: 20px;
+}
+.mine_rightbox_chosed{
+  padding: 0;
+  margin: 0;
+  width: 90%;height: 10%;
+  background-color: #00152b;
+}
+.mine_rightbox_chosed ul{
+        width: 80%;height: 100%;
+    float: left;
+     display: flex;
+    flex-direction:row;/*row:行 column:列*/
+    justify-content: flex-start;
+}
+.mine_rightbox_chosed ul li{
+    width: 15%;height: 50%;
+    float: left;
+    padding: 2%;
+    margin: 1%;
+    color: white;
+    font-family: 黑体, serif;
+    font-size: x-small;
+    font-weight: normal;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    cursor: pointer;
+    transition: all 1s;
+}
+.mine_command{
+    float: right;
+    color: #66aee6;
+    font-family: fangsong;
+    font-weight: bold;
+    cursor:pointer;
+}
+.mine_command:hover{
+    color: snow;
+}
+.record-row {
+  display: flex;
+    flex-wrap: wrap;
+  justify-content: flex-start;
+    border: #E4FEFF solid 1px;
+    box-shadow: 0 0 1rem .5rem #436495;
+}
+
+.record-block {
+    width: 100%;
+    height: 30%;
+    background-color: #032541;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.NoContent{
+    display: block;
+    width: 100%;
+    height: 70%;
+    margin: 0 auto 0;
+    color: gray;
+}
+.record-block h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.record-block ul {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+    height: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.record-block ul li {
+    width: 25%;
+    height: 25%;
+    margin: 2% 2% 5px;
+    box-shadow: 0 0 2px 0 #E4FEFF;
+
+}
+.record-block .delete_icon{
+    display: none;
+    float: right;
+    width: 15px;
+    height: 15px;
+    margin: 2px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+#mine_video_card_text{
+    width: 85%;
+}
+#mine_video_card_text a{
+    float: unset;
+    width: 100%;
+}
+
+
+/*.video_card_text-img-top {*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  object-fit: cover;*/
+/*}*/
+
+/*.video_card_text {*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*    margin-top: 10px;*/
+/*    background-color: #007bff;*/
+/*    border-radius: 5px;*/
+/*}*/
+/*.video_card_text a {*/
+/*    color: #fff;*/
+/*    text-align: center;*/
+/*    font-size: 1em;*/
+/*    text-decoration: none;*/
+/*}*/
+/*.video_card_text:hover{*/
+/*  background-color: #0069d9;*/
+/*}*/

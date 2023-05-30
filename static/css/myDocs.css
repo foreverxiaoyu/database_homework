@@ -1,0 +1,9 @@
+#preview{
+    width: 500px; height: 400px;
+}
+#preview iframe{
+    margin: 0;
+    width: 500px; height: 400px;
+
+
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock%}</title>
+</head>
+<body>
+<div style="width:400px;height:30px;background-color:#00ff0f"> 导航 这里不变</div>
+<p>/{/%entends 父文件名/}’与’/{ /%block block名 /% /} 子内容 /{ /%block block名 /% /}‘实现模板继承</p>
+{% block body %}
+
+{% endblock%}
+
+</body>
+</html>

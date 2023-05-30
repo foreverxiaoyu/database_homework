@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang=zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.3, maxmum-scale=1.0, minimum-scale=0.3">
+    <meta name="description" content="这是一个以个人开发学习为目的的网页实战项目，如果您正在工作请您忽略本网站。本网站将会持续性更新内容。项目在个人兴趣的主导下存在或消亡。
+    致尊敬的@星辰与海尔文斯，去奏响这哪怕须臾的群星交响吧！">
+    <meta name="keyword" content="群星，天启，sky-stars，群星华绽，科幻小说，星辰与海尔文斯，资源分享，个人网站，前端实战，小白的幻想，走向共和，ACG，科幻风，
+    口径即正义，Robort，AI，未来">
+    <title>群星——天启</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cen.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css')}}" />
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <main>
+        <div id="main_div_mainPageImg"></div>
+        <div id="main_div">
+            <ul id="navs">
+                <li>
+                    <a class="menu_lis_style1"   href="{{ url_for('index') }}" >首页</a>
+                    <a class="menu_lis_style2"   href="{{ url_for('index') }}"  >首页</a>
+                </li>
+                <li>
+                    <a class="menu_lis_style1"   href="#"  >文档-群星</a>
+                    <a class="menu_lis_style2"   href="#" >文档-群星</a>
+                </li>
+                <li>
+                    <a class="menu_lis_style1"   href="{{ url_for('resources') }}" >资源-互联</a>
+                    <a class="menu_lis_style2"   href="{{ url_for('resources') }}"  >资源-互联</a>
+                </li>
+                <li><a class="menu_lis_style1"   href="#" >记录-流水</a>
+                    <a class="menu_lis_style2"   href="#"  >记录-流水</a>
+                </li>
+                <li>
+                    <a class="menu_lis_style1"   href="#"  >开发-前进</a>
+                    <a class="menu_lis_style2"   href="#"  >开发-前进</a>
+                </li>
+            </ul>
+            <div id="main_page">
+                <div id = "local">
+                    <div id="local_pics">
+                        <ul id = "main_page_local_pics">
+                                <li class="mainpage_imgs"><img src="{{url_for('static',filename='imgs/main0.png')}}" width="100%" height="100%"></li>
+                                <li class="mainpage_imgs"><img src="{{url_for('static',filename='imgs/main1.png')}}"  width="100%" height="100%"></li>
+                                <li class="mainpage_imgs"><img src="{{url_for('static',filename='imgs/main2.jpeg')}}" width="100%" height="100%"></li>
+                                <li class="mainpage_imgs"><img src="{{url_for('static',filename='imgs/main3.png')}}"  width="100%" height="100%"></li>
+                                <li class="mainpage_imgs"><img src="{{url_for('static',filename='imgs/main4.png')}}"  width="100%" height="270px"></li>
+                                <li class="mainpage_imgs"><img src="{{url_for('static',filename='imgs/main5.png')}}"  width="100%" height="100%"></li>
+                                <li class="mainpage_imgs"><img src="{{url_for('static',filename='imgs/main6.png')}}"  width="100%" height="100%"></li>
+                        </ul>
+                        <div class="change" id="change-left"><</div>
+                        <div class="change" id="change-right">></div>
+                        <div id ="local_pics_text">
+                            <span id="mainPageImgsDescription">^AI,人类与地外文明，共同奏响驶向群星的交响^</span>
+                            <ul class="Thepoint">
+                                <li class="points" onclick="points_change(0)"></li>
+                                <li class="points" onclick="points_change(1)"></li>
+                                <li class="points" onclick="points_change(2)"></li>
+                                <li class="points" onclick="points_change(3)"></li>
+                                <li class="points" onclick="points_change(4)"></li>
+                                <li class="points" onclick="points_change(5)"></li>
+                                <li class="points" onclick="points_change(6)"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id = "developers_said">
+                        <span>开发者说</span>
+                        <marquee bgcolor= "aliceblue" loop="-1" direction ="up" behavior="scroll" hspace ="10px" vspace="5px" scrollamount = "3"
+                                onmouseover="this.stop()" onmouseout="this.start()">
+                                <blockquote>你好，陌生人。群星-天启是一个以个人开发学习为目的的网页实战项目，其所有内容皆为原创。<br></blockquote>
+                                <blockquote>你好，朋友。本网站将为你提供您或许会感兴趣的内容，但鄙人时间有限，网页的功能还在完善。还请多多海涵！<br></blockquote>
+                                <blockquote>你好，未曾谋面的你，如果您的时间尚且宽裕，还希望停下脚步见证关于“群星-天启”的前进！</blockquote>
+                        </marquee>
+                    </div>
+                </div>
+                <div id="main_down">
+                        <ul id ="main_down_ul">
+                            <li>
+                                <a href="#">
+                                    <div></div>
+                                    <span>《群星华绽》</span>
+                                    <p>由机械人类公民权引起争议正在把整个人类文明拉向战争的深渊。
+                                        而在剑拔弩张之时，一则光年外的讯息联系起两个文明间的命运。AI,人类与地外文明，共同奏响驶向群星的交响</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div></div>
+                                    <span> 资源 </span>
+                                    <p> 这里将会为您提供您可能在意的资源。分享是让资源活下去的动力，感动了旧时代的声音没有理由不会赢得新时代的喝彩！</p>
+                                 </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div></div>
+                                    <span> 开发 </span>
+                                    <p> 作为实践项目，这里是对新知识进行测试的试验场。从这里开始，时间将会见证知识的力量。</p>
+                                    <p>“—为了科学—”</p>
+                                 </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div></div>
+                                    <span> 记录 </span>
+                                    <p> 这里将会记录下本站的开发历程。在互联网的海洋里默默记录这须臾的溪流，I am,I was.</p>
+                                 </a>
+                            </li>
+                        </ul>
+
+                </div>
+            </div>
+        </div>
+        <footer>
+            <a href="http://beian.miit.gov.cn/" > 互联网备案：皖ICP备202212124号</a>
+            <a href="mailto:202105570204@smail.xtu.edu.cn">联系作者</a>
+        </footer>
+    </main>
+</body>
+
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="{{url_for('static', filename = 'js/jquery-min.js') }}"></script>
+<script src="{{ url_for('static', filename = "js/index.js") }}"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}"/>
+    <title>登录</title>
+</head>
+
+<body>
+<form class="login-container" method="post" id='login_window'>
+    <div class="left-container">
+        <div class="title"><span>登录</span></div>
+        <div class="input-container">
+            <label for='email'></label><input type="email" name="email" placeholder="邮箱名" id='email'>
+            <label for='password'></label><input type="password" name="password" placeholder="密码" id='password'>
+        </div>
+        <div class="message-container">
+            <span>忘记密码</span>
+        </div>
+    </div>
+    <div class="right-container">
+        <div class="regist-container">
+            <i>没有账号？></i>
+            <a class="regist" id="login_enroll" href="{{ url_for('register') }}">注册</a>
+        </div>
+        <div class="action-container" id="submit_login">
+            <div class="regist-container">立即登录</div>
+        </div>
+    </div>
+</form>
+
+{#<form class="login-container" role="form" method="post" id='enroll_window'>#}
+{#    <div class="left-container">#}
+{#        <div class="title"><span>注册</span></div>#}
+{#        <div class="enroll-container">#}
+{#            <div class="input-container">#}
+{#                <input type="text" id="Name" placeholder="名字" name="username">#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="enroll-container">#}
+{#            <div class="input-container">#}
+{#                <input type="email" id="email" placeholder="邮件" name=email>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="enroll-container">#}
+{#            <div class="input-container">#}
+{#                <input type="password" id="password" placeholder="密码" name="password">#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="enroll-container">#}
+{#            <label for="password" class="col-sm-2 control-label"><i class="mdi mdi-onepassword"></i></label>#}
+{#            <div class="input-container">#}
+{#                <input id="study_password" placeholder="学号" name=stu_id>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <div class="right-container">#}
+{#        <div class="regist-container">#}
+{#            <div class="action-container" id="enroll_return">#}
+{#                <span>返回</span>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#    </div>#}
+
+{#</form> <!-- /form -->#}
+
+<video autoplay loop src="{{ url_for('static', filename = 'video/Sparkling - 27212.mp4') }}" muted
+       id='login_video'></video>
+
+</body>
+<script src="{{ url_for('static', filename = 'js/jquery-min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/login.js') }}" type="text/javascript"></script>
+</html>

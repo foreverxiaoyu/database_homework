@@ -1,0 +1,41 @@
+a{
+    text-decoration-line: none;
+    color:unset;
+    height: 0;width: 0;
+}
+footer{
+    height: 20px;
+    margin:0 auto ;
+    text-align: center;
+    clear: both;
+}
+
+footer a{
+    color: white;
+    font-weight: 100; font-size: 3px;
+    text-decoration: none;
+    margin: 2px;
+}
+footer a:hover{
+    color: blue;
+}
+body,div,span,ul,li,p,footer{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;list-style: none;
+}
+.none{
+    margin: 0 auto;
+    width: 960px;height: 100px;
+    border: solid 3px rgba(78, 234, 234, 0.234);
+    text-align: center;
+    color: black;
+    background-color:#fff;
+
+}
+.none div{
+    color: antiquewhite;
+    font-size: 30px;
+    font-weight: 1500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户信息管理</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/user_manage.css') }}">
+ </head>
+ <body>
+   <div class="container">
+     <div class="user-info">
+       {% if user %}
+         <img src="{{ url_for('static',filename = user.user_avatar_url) }}" alt="User avatar" class="user-avatar">
+         {% else %}
+       <img src="{{ url_for('static',filename = 'icons/未登录用户.png') }}" alt="User avatar" class="user-avatar">
+         {% endif %}
+       <div class="user-details">
+           {% if user %}
+            <div class="user-id">{{ user.username }}</div>
+               <div class="user-signature">{{user.user_say}}</div>
+           {% else %}
+            <div class="user-id">未登录</div>
+            <div class="user-signature">还没有签名哦</div>
+           {% endif %}
+       </div>
+     </div>
+     <ul class="user-list">
+       <li class="user-list-item" id="email-item">
+         <span class="user-list-item-label">Email邮箱</span>
+           {% if user %}
+                <span class="user-list-item-value">{{ user.email }}</span>
+              {% else %}
+                <span class="user-list-item-value">未设置</span>
+              {% endif %}
+         <img src="{{url_for('static',filename = 'icons/编辑.png')}}" alt="Edit icon" class="user-list-item-icon"/>
+         <div class="user-list-item-dropdown" id="email-dropdown">
+           <input type="email" placeholder="Enter new email" id="email-input" class="user-list-item-dropdown-input">
+           <button id="email-button" class="user-list-item-dropdown-button">更改邮箱</button>
+             <button class="user-list-item-dropdown-button">取消更改</button>
+         </div>
+       </li>
+       <li class="user-list-item" id="address-item">
+         <span class="user-list-item-label">地址</span>
+           {% if user %}
+                <span class="user-list-item-value">{{ user.address }}</span>
+              {% else %}
+                <span class="user-list-item-value">未设置</span>
+              {% endif %}
+         <img src="{{url_for('static',filename = 'icons/编辑.png')}}" alt="Edit icon" class="user-list-item-icon"/>
+         <div class="user-list-item-dropdown" id="address-dropdown">
+           <input type="text" placeholder="Enter new address" id="address-input" class="user-list-item-dropdown-input">
+           <button id="address-button" class="user-list-item-dropdown-button">更改地址</button>
+             <button class="user-list-item-dropdown-button">取消更改</button>
+         </div>
+       </li>
+       <li class="user-list-item" id="enterprise-item">
+         <span class="user-list-item-label">企业或组织</span>
+           {% if user %}
+                <span class="user-list-item-value">{{ user.enterprise }}</span>
+              {% else %}
+                <span class="user-list-item-value">未设置</span>
+              {% endif %}
+         <img src="{{url_for('static',filename = 'icons/编辑.png')}}" alt="Edit icon" class="user-list-item-icon"/>
+         <div class="user-list-item-dropdown" id="enterprise-dropdown">
+           <input type="text" placeholder="Enter new enterprise" id="enterprise-input" class="user-list-item-dropdown-input">
+           <button id="enterprise-button" class="user-list-item-dropdown-button">更改企业或组织</button>
+             <button class="user-list-item-dropdown-button">取消更改</button>
+         </div>
+       </li>
+       <li class="user-list-item" id="stu_id-item">
+         <span class="user-list-item-label">学号</span>
+           {% if user %}
+               <span class="user-list-item-value">{{ user.stu_id }}</span>
+           {% else %}
+               <span class="user-list-item-value">0000</span>
+           {% endif %}
+         <img src="{{url_for('static',filename = 'icons/编辑.png')}}" alt="Edit icon" class="user-list-item-icon"/>
+         <div class="user-list-item-dropdown" id="stu_id-dropdown">
+           <input type="text" placeholder="Enter new email" id="stu_id-input" class="user-list-item-dropdown-input">
+           <button id="stu_id-button" class="user-list-item-dropdown-button">更改学号</button>
+             <button class="user-list-item-dropdown-button">取消更改</button>
+         </div>
+       </li>
+         <li class="user-list-item" id="user_avatar-item">
+         <span class="user-list-item-label">更改我的头像</span>
+         <img src="{{url_for('static',filename = 'icons/编辑.png')}}" alt="Edit icon" class="user-list-item-icon"/>
+         <div class="user-list-item-dropdown" id="user_avatar-dropdown">
+           <input type="file" placeholder="Enter new email" id="user_avatar-input" class="user-list-item-dropdown-input">
+           <button id="user_avatar-button" class="user-list-item-dropdown-button">更改头像</button>
+             <button class="user-list-item-dropdown-button">取消更改</button>
+         </div>
+       </li>
+       <!-- Add more list items here -->
+
+     </ul>
+
+   </div>
+       <div class="return_btn">
+           返回
+       </div>
+
+   <!-- Add jQuery library -->
+<script src="{{url_for('static', filename = 'js/jquery-min.js') }}"></script>
+<script src="{{url_for('static', filename = 'js/user_manage.js')}}" type= "text/javascript"></script>
+</body>
+</html>

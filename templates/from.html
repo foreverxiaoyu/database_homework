@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+<body>
+    <h1>注册页面</h1>
+    <form action="http://127.0.0.1:5000/register/" method="post" enctype="multipart/form-data">
+        <p>
+            <label for="username">用户名：</label>  <!--label和input通过id绑定在一起-->
+            <input type="text" name="username" placeholder="请输入用户名" id="username">
+        </p>                                     <!--placeholder 输入框默认显示的值-->
+        <p>
+            <label for="password">密码：</label>
+            <input type="password" name="password" placeholder="请输入密码" id="password">
+        </p>
+        <p>
+            <label for="birthday">生日：</label>
+            <input type="date" name="birthday" id="birthday">
+        </p>
+        <p>
+            <label>性别：</label>
+            <input type="radio" name="gender"  value="male" checked>男  <!--checked默认选中，简写了-->
+            <input type="radio" name="gender"  value="female" >女
+            <input type="radio" name="gender"  value="security">保密
+        </p>
+        <p>
+            <label>爱好：</label>
+            <input type="checkbox" name="hobby" value="read" checked>读书
+            <input type="checkbox" name="hobby" value="outdoors">户外
+            <input type="checkbox" name="hobby" value="movie">电影
+            <input type="checkbox" name="hobby" value="others">其他
+        </p>
+        <p>
+            <label for="homeland">家乡：</label>
+            <select name="homeland" id="homeland" multiple size="1">   <!--multiple设置多选-->
+                <option value="AH" selected>安徽</option>        <!--selected默认选中-->
+                <option value="HB">湖北</option>
+                <option value="BJ">北京</option>
+            </select>
+        </p>
+        <p>
+            <label for="avatar">头像：</label>
+            <input type="file" name="avatar" id="avatar">
+        </p>
+        <label for="self_info">自我介绍：</label>
+        <p>
+            <textarea name="self_info" id="self_info" cols="30" rows="10"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="注册">
+        </p>
+    </form>
+
+</body>
+</html>

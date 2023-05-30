@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源-互联</title>
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/resources.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/cen.css')}}">
+</head>
+<body>
+
+    <div class="head_bar"> 资源-互联 </div>
+    <main>
+        <div class="left_nav">
+            <ul>
+                <li class="left_navs" id = 'item1'>资源详情</li>
+                <li class="left_navs" id = 'item2'>视频</li>
+                <li class="left_navs" id = 'item3'>音乐</li>
+                <li class="left_navs" id = 'item4'>文档</li>
+                <li class="left_navs" id = 'item5'>我的</li>
+                <a href="{{ url_for('index') }}"><li class="left_navs"> 回到首页</li></a>
+            </ul>
+        </div>
+        <div id = 'login'>
+            <span id="id_p" aria-label="默认个人资料图片" role="link" data-bm="32" ></span>
+            <span id="id_n" title="Stars" aria-hidden="false">未登录</span>
+        </div>
+        <div class="user_profile">
+            <div>
+                <span>id:</span>
+                <span id = 'user_id'> none</span>
+            </div>
+            <div id = 'profile'>你还未登录哦</div>
+        </div>
+        <div class="main_window">
+
+            <div class="container" id = "index_resources">
+                    <div class="floating-ball" id="doc-ball">
+                      <span class="label">文档</span>
+                      <span class="description">待定</span>
+                    </div>
+                    <div class="floating-ball" id="video-ball">
+                      <span class="label">视频</span>
+                      <span class="description">待定</span>
+                    </div>
+                    <div class="floating-ball" id="my-ball">
+                      <span class="label">我的</span>
+                      <span class="description">待定</span>
+                    </div>
+                    <div class="floating-ball" id="music-ball">
+                      <span class="label">音乐</span>
+                      <span class="description">待定</span>
+                    </div>
+             </div>
+
+
+            <div class="container" id = "index_video">
+                  <div class="left-box">
+                    <!-- 左1/4的盒子内容 -->
+                      <video id = "video_left_autoplay" controls>
+                        <source src="{{url_for("static", filename = "video/xtuxgmv.mp4")}}" type="video/mp4">
+                        您的浏览器不支持 video 标签。
+                    </video>
+                      <div>
+                          <div class = "play_status" ></div>
+                          <span id = "main_video_span">欢迎来到湘潭大学</span>
+                      </div>
+                      <div id="video_text">
+                            &nbsp; &nbsp;&nbsp; 湘潭大学简称“湘大”，是一代伟人毛泽东同志亲自倡办的综合性全国重点大学、国家“双一流”建设高校。
+                              学校创办于1958年，同年9月10日，毛泽东同志亲笔题写“湘潭大学”校名，并亲切嘱托“一定要把湘潭大学办好”。1974年，邓小平、李先念等中央领导同志批准湘潭大学复校。
+                              1978年，学校被国务院确定为全国16所文理工综合性重点大学之一。1981年，学校成为全国首批硕士学位授权单位。复校以来，华国锋、江泽民、李鹏等党和国家领导人先后对学校的建设发展给予了高度重视与亲切关怀。
+                              2018年9月6日，习近平总书记对学校作出重要批示，希望湘潭大学扎根伟人故里，努力把学校办得更好、更有特色。2022年2月，学校入选国家“双一流”建设高校。
+                      </div>
+                  </div>
+                  <div class="right-box">
+                    <!-- 右边剩余区域的内容 -->
+
+                           <!-- 这里要重复 -->
+                    {% for data in video_information %}
+                      <div class="video_cards">
+                          <div class = "video_card-img-top-div">
+                              <img class="video_card-img-top" src="{{ data.video_img_src }}"alt="Video Preview" width="99%" height="99%">
+                          </div>
+
+                          <div class="video_card_text" id = "{{ data.video_id }}">
+                              <div class="collection_icon" style="background-image: url('{{ url_for('static',filename='icons/收藏.png')}}')"></div>
+                              <div class="likeit_icon" style="background-image: url('{{ url_for('static',filename='icons/喜欢.png')}}')"></div>
+                              <a href="{{ video_href }}" class="btn-primary">{{ data.video_title }}</a>
+                          </div>
+                      </div>
+                    {% endfor %}
+
+                     </div>
+                </div>
+
+                <div class="container" id = "index_music">
+                      <div class="left-box">
+                        <!-- 左1/4的盒子内容 -->
+                      </div>
+                      <div class="right-box">
+                        <!-- 右边剩余区域的内容 -->
+
+                      </div>
+                </div>
+
+                <div class="container" id = "index_doc">
+                      <div class="left-box">
+                        <!-- 左1/4的盒子内容 -->
+                      </div>
+                      <div class="right-box">
+                        <!-- 右边剩余区域的内容 -->
+
+                      </div>
+                </div>
+
+                <div class="container" id = "index_mine">
+                      <div class="left-box" id = "left-box-mine">
+                         <div>
+                             {% if user %}
+                                <img src="{{ url_for('static',filename = user.user_avatar_url) }}" alt="User Avatar" />
+                             {% else %}
+                                 <img src="/static/icons/未登录用户.png" alt="User Avatar" />
+                             {% endif %}
+
+                            <p class="signature">未登录</p>
+                         </div>
+                        <ul class="user-options">
+                          <li>更改信息</li>
+                          <li>登出</li>
+                        </ul>
+                      </div>
+
+                      <div class="right-box" id = "right-box-mine">
+                        <div class="mine_rightbox_chosed">
+                            <ul>
+                                <li>我收藏的</li>
+                                <li>我喜欢的</li>
+                            </ul>
+                            <div class="mine_command">管理</div>
+                        </div>
+                        <div class="record-row">
+                          <div class="record-block">
+                            <h3>我推的视频</h3>
+                             <div class="NoContent" id = 'NoVideo'>
+                                 您还没有在这里收藏内容哦 ( ^& ^ )
+                             </div>
+                            <ul>
+
+                        {#数据来自后端，自动预加载#}
+                                {% for data in connected_video_information %}
+                              <li id ="{{ data.video_id }}">
+                                   <div class="delete_icon" style="background-image: url('{{ url_for('static',filename='icons/删除.png')}}')"></div>
+                                  <div class = "video_card-img-top-div">
+                                      <img class="video_card-img-top" src="{{data.video_img_src}}" alt="Video Preview" width="99%" height="99%">
+                                  </div>
+
+                                  <div class="video_card_text" id = "mine_video_card_text">
+                                      <a href="{{data.video_href}}" class="btn-primary">{{ data.video_title }}</a>
+                                  </div>
+                              </li>
+                                {% endfor %}
+                            </ul>
+                          </div>
+                          <div class="record-block">
+                            <h3>我推的音乐</h3>
+                              <div class="NoContent" id = 'NoVideo'>
+                                 您还没有在这里收藏内容哦 ( ^& ^ )
+                             </div>
+{#                            <ul>#}
+{#                              <li>Song 1</li>#}
+{#                              <li>Song 2</li>#}
+{#                              <li>Song 3</li>#}
+{#                            </ul>#}
+                          </div>
+                          <div class="record-block">
+                            <h3>我推的文档</h3>
+                              <div class="NoContent" id = 'NoVideo'>
+                                 您还没有在这里收藏内容哦 ( ^& ^ )
+                             </div>
+                            <ul>
+{#                              <li>Document 1</li>#}
+{#                              <li>Document 2</li>#}
+{#                              <li>Document 3</li>#}
+                            </ul>
+                          </div>
+                        </div>
+
+                        <!-- Add more rows here -->
+                      </div>
+                </div>
+
+
+        </div>
+
+    </main>
+
+
+</body>
+<script src="{{url_for('static', filename = 'js/jquery-min.js') }}"></script>
+<script src="{{url_for('static', filename = 'js/resources.js')}}" type= "text/javascript"></script>
+</html>

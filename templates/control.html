@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>none</title>
+</head>
+<body>
+<!--jinja语法要求 控制语句有开始和结束-->
+{% if age < 18 %}
+<div>您未成年，已进入青少年模式！</div>
+
+{% elif age >= 18%}
+<div>你好，同志！</div>
+<!--语句结束-->
+{% endif %}
+
+<ul>
+    {% for li in data %}
+        <li> 姓名:{{li.name}}</li>
+        <li> 年龄:{{li.age}}</li>
+    <!--语句结束-->
+    {% endfor %}
+</ul>
+
+
+</body>
+</html>
